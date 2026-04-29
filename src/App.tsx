@@ -18,6 +18,8 @@ import Funding from "./pages/Funding";
 import Checkout from "./pages/Checkout";
 import Confirmation from "./pages/Confirmation";
 import Logout from "./pages/Logout";
+import AdminPanel from "./pages/AdminPanel";
+import FarmMonitor from "./pages/FarmMonitor";
 
 /* 🔐 PROTECTED ROUTE (WORKING VERSION) */
 function ProtectedRoute(props: { children: JSX.Element }) {
@@ -115,6 +117,24 @@ export default function App() {
             element={
               <ProtectedRoute>
                 <Confirmation />
+              </ProtectedRoute>
+            }
+          />
+          
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminPanel />
+              </ProtectedRoute>
+            }
+          />
+          
+          <Route
+            path="/monitor"
+            element={
+              <ProtectedRoute>
+                <FarmMonitor />
               </ProtectedRoute>
             }
           />

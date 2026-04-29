@@ -56,7 +56,7 @@ export default function Navbar() {
             {userRole ? (
               <>
                 <Link
-                  to={userRole === "farmer" ? "/farmer" : "/industry"}
+                  to={userRole === "farmer" ? "/farmer" : userRole === "industry" ? "/industry" : "/admin"}
                   className="text-slate-600 hover:text-emerald-700 font-bold text-xs uppercase tracking-widest transition-all relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-500 after:transition-all hover:after:w-full"
                 >
                   Dashboard
@@ -85,6 +85,14 @@ export default function Navbar() {
                     Marketplace
                   </Link>
                 )}
+                {userRole === "admin" && (
+                  <Link
+                    to="/monitor"
+                    className="text-slate-600 hover:text-emerald-700 font-bold text-xs uppercase tracking-widest transition-all relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-500 after:transition-all hover:after:w-full"
+                  >
+                    Monitor
+                  </Link>
+                )}
                 <Link
                   to="/logout"
                   className="text-slate-500 hover:text-red-500 font-bold text-xs uppercase tracking-widest transition-colors cursor-pointer"
@@ -94,7 +102,7 @@ export default function Navbar() {
               </>
             ) : (
               <Link
-                to="/login"
+                to="/"
                 className="btn-primary !py-2.5 !px-6 text-sm"
               >
                 Get Started

@@ -23,7 +23,7 @@ export default function Login() {
   const [searchParams] = useSearchParams();
 
   const [showPassword, setShowPassword] = useState(false);
-  const [role, setRole] = useState<"farmer" | "industry">("industry");
+  const [role, setRole] = useState<"farmer" | "industry" | "admin">("industry");
   const [mode, setMode] = useState<"login" | "register">("login");
 
   const [email, setEmail] = useState("");
@@ -74,7 +74,9 @@ export default function Login() {
       }
 
       // ✅ redirect based on role
-      if (profile.role === "farmer") {
+      if (profile.role === "admin") {
+        navigate("/admin");
+      } else if (profile.role === "farmer") {
         navigate("/farmer");
       } else {
         navigate("/industry");
@@ -163,6 +165,17 @@ export default function Login() {
             >
               <Leaf className="size-4" />
               Farmer
+            </button>
+            <button
+              type="button"
+              onClick={() => setRole("admin")}
+              className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${role === "admin"
+                  ? "bg-white text-emerald-600 shadow-md shadow-emerald-900/5"
+                  : "text-slate-500 hover:text-slate-700"
+                }`}
+            >
+              <ShieldCheck className="size-4" />
+              Admin
             </button>
           </div>
 
