@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Industry Carbon Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #0f172a;
+            --bg-main: #f8fafc;
+            --sidebar-bg: #ffffff;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<aside class="w-64 bg-[var(--sidebar-bg)] border-r border-slate-200 flex flex-col fixed h-full">
+<div class="p-6 flex items-center gap-3">
+<div class="w-8 h-8 bg-[var(--primary)] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">eco</span>
+</div>
+<span class="font-bold text-xl tracking-tight">EcoTrade</span>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[var(--primary)] bg-emerald-50 rounded-lg font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-[var(--text-muted)] hover:bg-slate-50 hover:text-[var(--text-main)] transition-colors rounded-lg font-medium" href="#">
+<span class="material-symbols-outlined">calculate</span>
+                Emission Calculator
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-[var(--text-muted)] hover:bg-slate-50 hover:text-[var(--text-main)] transition-colors rounded-lg font-medium" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+                Marketplace
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-[var(--text-muted)] hover:bg-slate-50 hover:text-[var(--text-main)] transition-colors rounded-lg font-medium" href="#">
+<span class="material-symbols-outlined">history</span>
+                Transactions
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-[var(--text-muted)] hover:bg-slate-50 hover:text-[var(--text-main)] transition-colors rounded-lg font-medium" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="p-4 border-t border-slate-100">
+<div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Company Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD06pbHmFtPRaje5MZBLq7pCZKZDTJOOxnvDIU4yIecqRwguCC_tSlCkztr6O_Te5u6GOgtx-f_70AE77o4tf07SvD8kRD1CZkUzRZTAMwoObdv-15hSbjk77u5xWBe7mi6eFX9ubH3NH41NYHFuVRqZm82U8D8T7LnB3HEpleTmRE509PmleRZ2V3f5W0vdcikQoCNBZBiAoyOmdrC3R1ce5QSoEtr0ayYE9cW4xQ_k4BBzjMKXdVda8_xmZzRs0qEd8qjHy6ttPk"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-sm font-semibold truncate">Industrial Corp Inc.</p>
+<p class="text-xs text-[var(--text-muted)] truncate">Verified Partner</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 ml-64 p-8">
+<header class="flex justify-between items-center mb-8">
+<div>
+<h1 class="text-2xl font-bold">Industry Carbon Dashboard</h1>
+<p class="text-[var(--text-muted)]">Real-time monitoring of your environmental footprint</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-white border border-slate-200 px-4 py-2 rounded-lg flex items-center gap-2 font-medium hover:bg-slate-50">
+<span class="material-symbols-outlined text-lg">file_download</span>
+                    Export Report
+                </button>
+<button class="bg-[var(--primary)] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[var(--primary-dark)] transition-colors flex items-center gap-2 shadow-sm shadow-emerald-200">
+<span class="material-symbols-outlined text-lg">shopping_basket</span>
+                    Buy Credits
+                </button>
+</div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-rose-50 rounded-lg">
+<span class="material-symbols-outlined text-rose-500">factory</span>
+</div>
+<div class="flex items-center text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded text-xs font-bold">
+<span class="material-symbols-outlined text-xs">trending_down</span>
+                        -2.4%
+                    </div>
+</div>
+<h3 class="text-[var(--text-muted)] text-sm font-medium">Total CO₂ Emissions</h3>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-3xl font-bold">12,450.8</span>
+<span class="text-sm text-[var(--text-muted)]">tons / year</span>
+</div>
+<div class="mt-4 flex items-end gap-1 h-8">
+<div class="w-full bg-slate-100 h-4 rounded-sm relative">
+<div class="absolute bottom-0 left-0 w-full h-[60%] bg-rose-200 rounded-sm"></div>
+</div>
+<div class="w-full bg-slate-100 h-6 rounded-sm relative">
+<div class="absolute bottom-0 left-0 w-full h-[80%] bg-rose-200 rounded-sm"></div>
+</div>
+<div class="w-full bg-slate-100 h-8 rounded-sm relative">
+<div class="absolute bottom-0 left-0 w-full h-[40%] bg-rose-200 rounded-sm"></div>
+</div>
+<div class="w-full bg-slate-100 h-5 rounded-sm relative">
+<div class="absolute bottom-0 left-0 w-full h-[50%] bg-rose-500 rounded-sm"></div>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-amber-50 rounded-lg">
+<span class="material-symbols-outlined text-amber-500">pending_actions</span>
+</div>
+</div>
+<h3 class="text-[var(--text-muted)] text-sm font-medium">Credits Needed</h3>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-3xl font-bold">4,280</span>
+<span class="text-sm text-[var(--text-muted)]">credits</span>
+</div>
+<div class="mt-4">
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-amber-400 h-full w-[65%]"></div>
+</div>
+<p class="text-xs text-[var(--text-muted)] mt-2">65% of compliance goal met</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-emerald-50 rounded-lg">
+<span class="material-symbols-outlined text-[var(--primary)]">verified</span>
+</div>
+</div>
+<h3 class="text-[var(--text-muted)] text-sm font-medium">Credits Purchased</h3>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-3xl font-bold">8,170</span>
+<span class="text-sm text-[var(--text-muted)]">credits</span>
+</div>
+<div class="mt-4 flex -space-x-2 overflow-hidden">
+<img alt="Farm project" class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRzvB9SlNk9zIIdsjCZGRkNxcBeP7AfYlCAjrbk7RWJfwylQD7e9lj_g4zQsJhZr5u9MUtb7HBKGYW5GjW0YN1_MJBU5KNZDoVCmr-zVM5Yzr2aQs2wj_wjAnRgxDu6ExvSTt4NTa1xEeWaSKYZM6sA-dEA2D8znEaKkWa1mdwMCRNmH1jn3zW6e_U5-IwL_TA3C4odyoEjRgg5lC3pePOyjZ6HCnDLO7ksLRGgZoQXmqtrjOSzIvjKJmfaLqWH2inDcPcGVjQ8BY"/>
+<img alt="Farm project" class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyyJLGUyQToa-yJqwMz86q5kJZ81fGZFdo6ZG0Q9I_THA9BWFhc7LfX1d9_DqctZTYf253iEAfHad_8sdgXpmbG-8qu0AorVkjg8ep_8TnHIpDaGxf0A6JdWXybU_nwdWnOzdhMM-h_tFtfesVMrwoI0leZXVNVntVYB7iM5T4sKO9IM1JRFguTji9ulQOfumeJ5Yx0XTnk0eD_C40T86jmS2O7iakrMsDrDeC9xWrgmEh_BfznsxfyAvBA_zeu8g5iGq5p8KvpIA"/>
+<img alt="Farm project" class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB4a9GL9SLNei0eTQ9Zu0aHYhkUXu2LGXDC-AoG7rTO4yjCrehLKr9Pi864zmyNeqqJbznp0RBegyQYWEfnhYXfLv_BPGiz3d1VGwAnn894v-ldKzkKWpV6Awd60jEyMyMJE3nurjw3ch7vheCokCMtuMyabC2f-_htcSWfAIew9gBQgLtwdvMI1eTk13EOALpiwz63rx2sdjzoYDjJdRgBQ8tZbK1zM1La1wMOmbHpZ3-k_zHAZpIYqALM5FKXd66RRRxylIYmcY"/>
+<div class="flex items-center justify-center h-8 w-8 rounded-full ring-2 ring-white bg-slate-100 text-[10px] font-bold">+12</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h2 class="text-lg font-bold">Monthly Emission Data</h2>
+<p class="text-sm text-[var(--text-muted)]">Comparison between gross emissions and offset targets</p>
+</div>
+<select class="bg-slate-50 border-none rounded-lg text-sm font-medium focus:ring-[var(--primary)]">
+<option>Last 6 Months</option>
+<option>Last Year</option>
+</select>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-2">
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-slate-100 rounded-t-lg relative h-full">
+<div class="absolute bottom-0 w-full bg-slate-300 h-[85%] rounded-t-lg group-hover:bg-slate-400 transition-colors"></div>
+</div>
+<span class="text-xs font-medium text-[var(--text-muted)]">Jan</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-slate-100 rounded-t-lg relative h-full">
+<div class="absolute bottom-0 w-full bg-slate-300 h-[75%] rounded-t-lg group-hover:bg-slate-400 transition-colors"></div>
+</div>
+<span class="text-xs font-medium text-[var(--text-muted)]">Feb</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-slate-100 rounded-t-lg relative h-full">
+<div class="absolute bottom-0 w-full bg-slate-300 h-[90%] rounded-t-lg group-hover:bg-slate-400 transition-colors"></div>
+</div>
+<span class="text-xs font-medium text-[var(--text-muted)]">Mar</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-slate-100 rounded-t-lg relative h-full">
+<div class="absolute bottom-0 w-full bg-emerald-400 h-[60%] rounded-t-lg transition-colors"></div>
+</div>
+<span class="text-xs font-medium text-[var(--text-muted)]">Apr</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-slate-100 rounded-t-lg relative h-full">
+<div class="absolute bottom-0 w-full bg-slate-300 h-[80%] rounded-t-lg group-hover:bg-slate-400 transition-colors"></div>
+</div>
+<span class="text-xs font-medium text-[var(--text-muted)]">May</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-slate-100 rounded-t-lg relative h-full">
+<div class="absolute bottom-0 w-full bg-slate-300 h-[65%] rounded-t-lg group-hover:bg-slate-400 transition-colors"></div>
+</div>
+<span class="text-xs font-medium text-[var(--text-muted)]">Jun</span>
+</div>
+</div>
+<div class="mt-8 flex gap-6 border-t border-slate-50 pt-6">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-slate-300 rounded-full"></div>
+<span class="text-xs font-medium text-[var(--text-muted)]">Gross Emissions (CO₂)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-emerald-400 rounded-full"></div>
+<span class="text-xs font-medium text-[var(--text-muted)]">Post-Offset Balance</span>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+<h2 class="text-lg font-bold mb-6">Quick Marketplace</h2>
+<div class="space-y-4">
+<div class="p-4 border border-slate-100 rounded-xl hover:border-[var(--primary)] transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-[var(--primary)] bg-emerald-50 px-2 py-0.5 rounded">REGENERATIVE AGRI</span>
+<span class="font-bold">$18.50 <span class="text-[10px] text-[var(--text-muted)]">/ton</span></span>
+</div>
+<h4 class="font-semibold text-sm">Green Valley Soil Carbon</h4>
+<p class="text-xs text-[var(--text-muted)] mt-1">1,200 credits available • Ohio, USA</p>
+<button class="w-full mt-4 py-2 border border-slate-200 rounded-lg text-sm font-medium group-hover:bg-[var(--primary)] group-hover:text-white group-hover:border-[var(--primary)] transition-colors">Quick Buy</button>
+</div>
+<div class="p-4 border border-slate-100 rounded-xl hover:border-[var(--primary)] transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-sky-500 bg-sky-50 px-2 py-0.5 rounded">REFORESTATION</span>
+<span class="font-bold">$22.00 <span class="text-[10px] text-[var(--text-muted)]">/ton</span></span>
+</div>
+<h4 class="font-semibold text-sm">Amazon Basin Restoration</h4>
+<p class="text-xs text-[var(--text-muted)] mt-1">450 credits available • Brazil</p>
+<button class="w-full mt-4 py-2 border border-slate-200 rounded-lg text-sm font-medium group-hover:bg-[var(--primary)] group-hover:text-white group-hover:border-[var(--primary)] transition-colors">Quick Buy</button>
+</div>
+</div>
+<a class="block text-center mt-6 text-sm font-medium text-[var(--primary)] hover:underline" href="#">View All Projects</a>
+</div>
+</div>
+<div class="mt-8 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center">
+<h2 class="text-lg font-bold">Latest Carbon Transactions</h2>
+<button class="text-sm font-medium text-[var(--primary)]">View History</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 border-b border-slate-100 text-xs font-bold uppercase text-[var(--text-muted)] tracking-wider">
+<tr>
+<th class="px-6 py-4">Transaction ID</th>
+<th class="px-6 py-4">Source Farmer</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Credits</th>
+<th class="px-6 py-4">Amount</th>
+<th class="px-6 py-4">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 text-sm">
+<tr>
+<td class="px-6 py-4 font-mono text-[13px]">#TX-99021</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center text-[10px] font-bold text-orange-600">SM</div>
+                                    Samuel Miller
+                                </div>
+</td>
+<td class="px-6 py-4 text-[var(--text-muted)]">Oct 24, 2023</td>
+<td class="px-6 py-4 font-semibold">150 tCO2e</td>
+<td class="px-6 py-4">$2,775.00</td>
+<td class="px-6 py-4">
+<span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full text-[11px] font-bold">COMPLETED</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-mono text-[13px]">#TX-98944</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[10px] font-bold text-blue-600">LR</div>
+                                    Linda Rose Farms
+                                </div>
+</td>
+<td class="px-6 py-4 text-[var(--text-muted)]">Oct 18, 2023</td>
+<td class="px-6 py-4 font-semibold">500 tCO2e</td>
+<td class="px-6 py-4">$9,250.00</td>
+<td class="px-6 py-4">
+<span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full text-[11px] font-bold">COMPLETED</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-mono text-[13px]">#TX-98812</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center text-[10px] font-bold text-purple-600">HT</div>
+                                    Heritage Timber
+                                </div>
+</td>
+<td class="px-6 py-4 text-[var(--text-muted)]">Oct 12, 2023</td>
+<td class="px-6 py-4 font-semibold">2,000 tCO2e</td>
+<td class="px-6 py-4">$44,000.00</td>
+<td class="px-6 py-4">
+<span class="bg-amber-100 text-amber-700 px-2 py-1 rounded-full text-[11px] font-bold">PENDING</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+
+</body></html>

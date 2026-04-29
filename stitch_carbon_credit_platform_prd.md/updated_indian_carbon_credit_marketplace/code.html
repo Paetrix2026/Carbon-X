@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carbon Credit Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Inter', sans-serif;
+                @apply bg-slate-50 text-slate-900;
+            }
+        }
+        :root {
+            --primary: #059669;
+            --primary-dark: #065f46;
+            --accent: #3b82f6;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filter-chip {
+            @apply px-4 py-2 rounded-full border border-slate-200 bg-white text-sm font-medium hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors cursor-pointer;
+        }
+        .active-filter {
+            @apply border-[var(--primary)] bg-emerald-50 text-[var(--primary)];
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<header class="sticky top-0 z-50 bg-white border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[var(--primary)] text-3xl">eco</span>
+<span class="text-xl font-bold tracking-tight">EcoTrade</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+<a class="hover:text-[var(--primary)]" href="#">Dashboard</a>
+<a class="text-[var(--primary)] border-b-2 border-[var(--primary)] h-16 flex items-center" href="#">Marketplace</a>
+<a class="hover:text-[var(--primary)]" href="#">Calculators</a>
+<a class="hover:text-[var(--primary)]" href="#">Impact Reports</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="text-right hidden sm:block">
+<p class="text-xs text-slate-500">Corporate Balance</p>
+<p class="text-sm font-semibold">1,240.50 tCO2e</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden border border-slate-300">
+<img alt="User Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvf4AD0_IO4omsws3qRwLluVMLNW2S477Pl_wQ2rwCvsJ6QHW2kIVw0ufioASH9f-N2o5VtPP1ZX9irmYZrCHDiDHPTrqOM3tqWmINxmMGSDQFmvKGWF54MGGpU6iCfr91l9gbR_PhiUhwsMzjJnKN9bfots6I4Uq4knF1FACh0QjBD3RgIrgizNJF_fCeSMurlUXQXq9ZFG9werObtu_YP2LOwPEY9tTahzSY49YmXRIHYsSpslPp7K3WCdgH1KMbFNK6Go3KFLs"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 py-8">
+<div class="mb-10">
+<h1 class="text-3xl font-bold text-slate-900 mb-2">Carbon Credit Marketplace</h1>
+<p class="text-slate-600">Browse verified environmental projects and offset your carbon footprint.</p>
+<div class="mt-8 flex flex-col md:flex-row gap-4">
+<div class="flex-1 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none" placeholder="Search by project name, location or ID..." type="text"/>
+</div>
+<button class="bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">tune</span>
+                Advanced Filters
+            </button>
+</div>
+</div>
+<div class="flex flex-wrap gap-3 mb-8">
+<div class="filter-chip active-filter">All Projects</div>
+<div class="filter-chip flex items-center gap-1">
+            Project Type <span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+<div class="filter-chip flex items-center gap-1">
+            Location <span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+<div class="filter-chip flex items-center gap-1">
+            Price Range <span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+<div class="filter-chip flex items-center gap-1">
+            Vintage Year <span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+<div class="ml-auto flex items-center gap-2 text-sm font-medium text-slate-500">
+<span>Sort by:</span>
+<select class="bg-transparent border-none focus:ring-0 text-slate-900 font-semibold cursor-pointer py-0">
+<option>Recommended</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Recently Added</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Rajasthan Solar Park Initiative -->
+<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group">
+<div class="h-48 bg-slate-100 relative overflow-hidden">
+<img alt="Solar panels in Rajasthan desert" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyMaisLC8cjiyBl_hijR0Zs93VstzzbkAGOnwCFUnch3OCsdnXsQR6VkkBb2GRMFGTHkYBizXjMtmHJPAnhaLdQEy6EjptjNFDjycfYAplGmAGLXyyiIgcCqeDius3-Qyxzpq6PJ7bsZFtfnLtzT94iGp_yXl3utSNri6LdCk1-q_nqhFr1PfVnOoPRm10G4rAKJ2SnQH2inNJz5zyJy0bOykaaN5A5Bp0tv7t68L_w3pN965c8x1BSZ5Z_fpILh8tQLpTyGBD7qQ"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Verified
+                    </span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-1">Solar Power</p>
+<h3 class="font-bold text-lg leading-tight">Rajasthan Solar Park Initiative</h3>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Jodhpur, Rajasthan, India</span>
+</div>
+<div class="grid grid-cols-2 gap-4 py-4 border-y border-slate-100 mb-4">
+<div>
+<p class="text-xs text-slate-500 mb-1">Credits Available</p>
+<p class="font-bold">4,500 <span class="text-[10px] font-medium text-slate-400">tCO2e</span></p>
+</div>
+<div>
+<p class="text-xs text-slate-500 mb-1">Price per Ton</p>
+<p class="font-bold text-[var(--primary)]">$18.50</p>
+</div>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 font-medium">Farmer / ID</span>
+<span class="text-xs font-semibold">Silva Farms (SF-2094)</span>
+</div>
+<button class="bg-emerald-50 text-[var(--primary)] px-4 py-2 rounded-lg text-sm font-bold hover:bg-[var(--primary)] hover:text-white transition-colors">
+                        Buy Credits
+                    </button>
+</div>
+</div>
+</div>
+<!-- Maharashtra Soil Health Project -->
+<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group">
+<div class="h-48 bg-slate-100 relative overflow-hidden">
+<img alt="Sustainable farming in Maharashtra" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxHKznUGkbgVKHmsfeLJIhka7UhiKIvZeT7aAUsa2CZXO_AhxVtPNzVQX5PmixoQ91OtBOI66PJrxDdvMGU-SCpJXKnR7G-_C-MG2ExhEkey7yewHK3u4FdeHJN2bteZFxIanAcvxHzvsJkKb4BE0bso_Xae_WO9kLHAox_FatRBQWWmWdpt5Do1188RiqqM6g3FA7spFZ700aVSB_cye3gfWQbhCW1cTGdXzbXrerE4vVJssq-u2QX62n_h2XDKfdGaA5c-BhbMo"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Verified
+                    </span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-1">Soil Carbon</p>
+<h3 class="font-bold text-lg leading-tight">Maharashtra Soil Health Project</h3>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Vidarbha, Maharashtra, India</span>
+</div>
+<div class="grid grid-cols-2 gap-4 py-4 border-y border-slate-100 mb-4">
+<div>
+<p class="text-xs text-slate-500 mb-1">Credits Available</p>
+<p class="font-bold">12,200 <span class="text-[10px] font-medium text-slate-400">tCO2e</span></p>
+</div>
+<div>
+<p class="text-xs text-slate-500 mb-1">Price per Ton</p>
+<p class="font-bold text-[var(--primary)]">$24.00</p>
+</div>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 font-medium">Farmer / ID</span>
+<span class="text-xs font-semibold">Miller Heritage (MH-8821)</span>
+</div>
+<button class="bg-emerald-50 text-[var(--primary)] px-4 py-2 rounded-lg text-sm font-bold hover:bg-[var(--primary)] hover:text-white transition-colors">
+                        Buy Credits
+                    </button>
+</div>
+</div>
+</div>
+<!-- Western Ghats Agroforestry -->
+<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group">
+<div class="h-48 bg-slate-100 relative overflow-hidden">
+<img alt="Lush greenery in Western Ghats" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuTBWNFfPWen4Vw4IVTLNngthIEwDQIJzrTlBKMKZMHfKxTpW1aQUWFSo4gaqDQaMjrZ88l_7TXfY_CspImQnLOgEWiHludEv2sazpCr-PNLlWT4oVwpyyczKYimbfy_JIehktptMRhGkRzniEdvQGWG2JMOAkjvvSfxV_r1FGu4zVZUnsydxqdCips--n8et0JnDsYcLJ437uMt5JivZigVR32pyEQwkm87eFsPgzSe2HJ6j36Z2RKq5iJOpAeYu99o86sGLagbE"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Verified
+                    </span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-1">Agroforestry</p>
+<h3 class="font-bold text-lg leading-tight">Western Ghats Agroforestry</h3>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Kodagu, Karnataka, India</span>
+</div>
+<div class="grid grid-cols-2 gap-4 py-4 border-y border-slate-100 mb-4">
+<div>
+<p class="text-xs text-slate-500 mb-1">Credits Available</p>
+<p class="font-bold">2,100 <span class="text-[10px] font-medium text-slate-400">tCO2e</span></p>
+</div>
+<div>
+<p class="text-xs text-slate-500 mb-1">Price per Ton</p>
+<p class="font-bold text-[var(--primary)]">$19.75</p>
+</div>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 font-medium">Farmer / ID</span>
+<span class="text-xs font-semibold">Kamau Estate (KE-5541)</span>
+</div>
+<button class="bg-emerald-50 text-[var(--primary)] px-4 py-2 rounded-lg text-sm font-bold hover:bg-[var(--primary)] hover:text-white transition-colors">
+                        Buy Credits
+                    </button>
+</div>
+</div>
+</div>
+<!-- Punjab Biomass Energy Project -->
+<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group">
+<div class="h-48 bg-slate-100 relative overflow-hidden">
+<img alt="Biomass and agriculture in Punjab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOF1KECRE4hE7iijOiAidAZaXMU0yBZN2mlFGRhRrB7m1--NwTPU2RbkSEQ13LlGjnJeMNLOWcK9_WVIOGXabqb9p90jci5Hz4K5rd8ToGjmbojKAZcZtoJNDxh3PBr6mPrz3s_kklG1SGk1UFOEri4E85bdDftqtg3zxGPawKm1POIEa_SBihDnJwjl91K-S8AS6NUK3NkI9FNCCGsKSTDl0fz8_c3ak6dPnG2jlebxNEml308GDwFoVA5kt2VAO0XnqXy2YBesA"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Verified
+                    </span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-1">Biomass Energy</p>
+<h3 class="font-bold text-lg leading-tight">Punjab Biomass Energy Project</h3>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Ludhiana, Punjab, India</span>
+</div>
+<div class="grid grid-cols-2 gap-4 py-4 border-y border-slate-100 mb-4">
+<div>
+<p class="text-xs text-slate-500 mb-1">Credits Available</p>
+<p class="font-bold">7,800 <span class="text-[10px] font-medium text-slate-400">tCO2e</span></p>
+</div>
+<div>
+<p class="text-xs text-slate-500 mb-1">Price per Ton</p>
+<p class="font-bold text-[var(--primary)]">$21.00</p>
+</div>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 font-medium">Farmer / ID</span>
+<span class="text-xs font-semibold">GreenTech Ag (GT-1190)</span>
+</div>
+<button class="bg-emerald-50 text-[var(--primary)] px-4 py-2 rounded-lg text-sm font-bold hover:bg-[var(--primary)] hover:text-white transition-colors">
+                        Buy Credits
+                    </button>
+</div>
+</div>
+</div>
+<!-- Himalayan Forest Preservation -->
+<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group">
+<div class="h-48 bg-slate-100 relative overflow-hidden">
+<img alt="Pine forests in Uttarakhand" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDTgtszmw8uScFkb4UJQrsYQ8hHwYHwT_rsofDm608zuqGL5zwWg01zXsSMeuKKFPmjv7ZM8uqZajMrFP-CN2Yk5yYYlJE80ce4QYRyNIThGU3mgK2yrTPaG20JTqjDdABeGAyCYi9yILIkm4kKJaRDKkpCBG7au3o3YL3zN0n37VE2vm8sWL9LPXxDDM_YyVi8DP7tVk06jHn0_crxM2Qvqazi4WMZhCaj0csXJ3AGNbW8UnmmXcVczwoxTVIjpkVMvBeBiVeWUI"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Verified
+                    </span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-1">Reforestation</p>
+<h3 class="font-bold text-lg leading-tight">Himalayan Forest Preservation</h3>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Uttarakhand, India</span>
+</div>
+<div class="grid grid-cols-2 gap-4 py-4 border-y border-slate-100 mb-4">
+<div>
+<p class="text-xs text-slate-500 mb-1">Credits Available</p>
+<p class="font-bold">15,000 <span class="text-[10px] font-medium text-slate-400">tCO2e</span></p>
+</div>
+<div>
+<p class="text-xs text-slate-500 mb-1">Price per Ton</p>
+<p class="font-bold text-[var(--primary)]">$15.20</p>
+</div>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 font-medium">Farmer / ID</span>
+<span class="text-xs font-semibold">Nordic Carbon (NC-4432)</span>
+</div>
+<button class="bg-emerald-50 text-[var(--primary)] px-4 py-2 rounded-lg text-sm font-bold hover:bg-[var(--primary)] hover:text-white transition-colors">
+                        Buy Credits
+                    </button>
+</div>
+</div>
+</div>
+<!-- Tamil Nadu Wind Farm Expansion -->
+<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group">
+<div class="h-48 bg-slate-100 relative overflow-hidden">
+<img alt="Wind turbines in Tamil Nadu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBUxtNttyuWd_PHQwGLFJUaWzIhm5bgFG8bn90VQbF8woxsY4IYMNxwbTUkGk3zTkshER1KrX8e2mHjifDYrJFs7vhPORJV-CdNwMmPr9-a0yQIUFmGDWZ15aavGt3xd63VJq-OZsoJfAiIwnLGQzv2YbwehnV5uuyW0DbJ8hn_j5RZgPuR9KuBMAfXt4AyLkFwDgvvTqez1GBwUNOJUHbDglCGw5pTx0T8BpCUvuZayIglDlwmwqcff9o0gQLSQOddEQPv-ku4tM"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Verified
+                    </span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">Wind Energy</p>
+<h3 class="font-bold text-lg leading-tight">Tamil Nadu Wind Farm Expansion</h3>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Muppandal, Tamil Nadu, India</span>
+</div>
+<div class="grid grid-cols-2 gap-4 py-4 border-y border-slate-100 mb-4">
+<div>
+<p class="text-xs text-slate-500 mb-1">Credits Available</p>
+<p class="font-bold">2,500 <span class="text-[10px] font-medium text-slate-400">tCO2e</span></p>
+</div>
+<div>
+<p class="text-xs text-slate-500 mb-1">Price per Ton</p>
+<p class="font-bold text-[var(--primary)]">$28.50</p>
+</div>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 font-medium">Farmer / ID</span>
+<span class="text-xs font-semibold">Island Utilities (IU-9980)</span>
+</div>
+<button class="bg-emerald-50 text-[var(--primary)] px-4 py-2 rounded-lg text-sm font-bold hover:bg-[var(--primary)] hover:text-white transition-colors">
+                        Buy Credits
+                    </button>
+</div>
+</div>
+</div>
+<!-- Gujarat Sustainable Grazing Program -->
+<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group">
+<div class="h-48 bg-slate-100 relative overflow-hidden">
+<img alt="Cattle grazing in Kutch grasslands" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWdJLHwz_WqhJ0nD0U-YUPH2jMAHJ5ROohrWMM29gCKS-i-3rqZ3IV9nSpVLbvdRe4oBLrdvNpkzOgYDfoetfZYk7n8LFEAPkT_AIgn4I2kHUTFVuk_luwUiyrLEYerEkNGiJw1JGX3dV4AoI4Ku2jSVvVpNlkdOGqJLNG1IGRumT5YTbR2jcdTTAr6UphBHGs_vbc6dp9LjhUKTVzRRcpDzKUJ1N49AfwfJbtVCifQQopT4NFJ-Vj31t1pMDFw_qoqtHvvpE8AaU"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Verified
+                    </span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-1">Soil Carbon</p>
+<h3 class="font-bold text-lg leading-tight">Gujarat Sustainable Grazing Program</h3>
+</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Kutch, Gujarat, India</span>
+</div>
+<div class="grid grid-cols-2 gap-4 py-4 border-y border-slate-100 mb-4">
+<div>
+<p class="text-xs text-slate-500 mb-1">Credits Available</p>
+<p class="font-bold">6,300 <span class="text-[10px] font-medium text-slate-400">tCO2e</span></p>
+</div>
+<div>
+<p class="text-xs text-slate-500 mb-1">Price per Ton</p>
+<p class="font-bold text-[var(--primary)]">$20.00</p>
+</div>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 font-medium">Farmer / ID</span>
+<span class="text-xs font-semibold">Outback Carbon (OC-7721)</span>
+</div>
+<button class="bg-emerald-50 text-[var(--primary)] px-4 py-2 rounded-lg text-sm font-bold hover:bg-[var(--primary)] hover:text-white transition-colors">
+                        Buy Credits
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center items-center gap-2">
+<button class="p-2 rounded-lg border border-slate-200 hover:bg-slate-100 transition-colors text-slate-400">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-[var(--primary)] text-white font-bold">1</button>
+<button class="w-10 h-10 rounded-lg border border-slate-200 hover:bg-slate-100 transition-colors">2</button>
+<button class="w-10 h-10 rounded-lg border border-slate-200 hover:bg-slate-100 transition-colors">3</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 rounded-lg border border-slate-200 hover:bg-slate-100 transition-colors">12</button>
+<button class="p-2 rounded-lg border border-slate-200 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<footer class="bg-slate-900 text-slate-400 py-12 mt-20">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-white mb-4">
+<span class="material-symbols-outlined text-[var(--primary)] text-3xl">eco</span>
+<span class="text-xl font-bold">EcoTrade</span>
+</div>
+<p class="text-sm">Connecting industries and sustainable farmers to build a carbon-neutral future.</p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">Marketplace</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-[var(--primary)]" href="#">All Projects</a></li>
+<li><a class="hover:text-[var(--primary)]" href="#">Reforestation</a></li>
+<li><a class="hover:text-[var(--primary)]" href="#">Soil Carbon</a></li>
+<li><a class="hover:text-[var(--primary)]" href="#">Blue Carbon</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">For Businesses</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-[var(--primary)]" href="#">How it Works</a></li>
+<li><a class="hover:text-[var(--primary)]" href="#">Emission Calculator</a></li>
+<li><a class="hover:text-[var(--primary)]" href="#">Corporate ESG</a></li>
+<li><a class="hover:text-[var(--primary)]" href="#">API Access</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">Support</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-[var(--primary)]" href="#">Help Center</a></li>
+<li><a class="hover:text-[var(--primary)]" href="#">Verification Process</a></li>
+<li><a class="hover:text-[var(--primary)]" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-[var(--primary)]" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+<p>© 2024 EcoTrade Carbon Marketplace. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white" href="#">Terms of Service</a>
+<a class="hover:text-white" href="#">Cookie Policy</a>
+<a class="hover:text-white" href="#">Trust &amp; Security</a>
+</div>
+</div>
+</footer>
+</body></html>

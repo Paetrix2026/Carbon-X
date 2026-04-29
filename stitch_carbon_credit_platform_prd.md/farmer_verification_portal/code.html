@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Farmer Verification Portal | CarbonTrade</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#13ec25",
+                "background-light": "#f6f8f6",
+                "background-dark": "#102212",
+              },
+              fontFamily: {
+                "display": ["Manrope"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-primary/10 px-6 py-4 lg:px-20 bg-background-light dark:bg-background-dark">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-background-dark">
+<span class="material-symbols-outlined text-2xl font-bold">eco</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">CarbonTrade</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-bold text-primary border-b-2 border-primary pb-1" href="#">Verification</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-primary/30 border border-primary/50 overflow-hidden">
+<img class="h-full w-full object-cover" data-alt="User profile photo of a farmer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7g21bfE41f5EwH9_2MxNDmMide16Yz-HAY750Ku2AFYxBaXvg7pvgde8scWCYphGV_Teo-m-IFET8_iu2JXJ47qerMgKp8CI0LPZYcvd4J9i7v6_TOJQB6l5onpj26zS6P1O-3J_VBDLIH4wBo1B80H-AQtvatAg7u_9meFf5GgCUYmztunrRr-ZR_vd317T3YG-jjVJp6mt0TjfSzsevFaPneuCagkN2n-oGs3rxPQbu4_j_cdWjcKGOUzZHRK3HBEzSOBKxb8c"/>
+</div>
+</div>
+</header>
+<main class="flex-1 px-6 py-8 lg:px-20 max-w-7xl mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-10">
+<h1 class="text-4xl font-black tracking-tight mb-2">Farmer Verification Portal</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg">Validate your sustainable practices and start earning premium carbon credits.</p>
+</div>
+<!-- Progress Stepper -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
+<!-- Step 1: Active -->
+<div class="relative flex items-start gap-4 p-4 rounded-xl bg-primary/10 border border-primary/30">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-background-dark">
+<span class="material-symbols-outlined">upload_file</span>
+</div>
+<div>
+<p class="font-bold text-primary">Document Upload</p>
+<p class="text-sm text-slate-500">Current Step</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex items-start gap-4 p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-300 dark:bg-slate-700 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">rate_review</span>
+</div>
+<div>
+<p class="font-bold">Internal Review</p>
+<p class="text-sm text-slate-500">Pending</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex items-start gap-4 p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-300 dark:bg-slate-700 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="font-bold">Third-party Audit</p>
+<p class="text-sm text-slate-500">Upcoming</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative flex items-start gap-4 p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-300 dark:bg-slate-700 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div>
+<p class="font-bold">Certified</p>
+<p class="text-sm text-slate-500">Goal</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Form Area -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Satellite Monitoring Card -->
+<div class="bg-slate-900/40 rounded-xl border border-primary/20 overflow-hidden">
+<div class="p-6 md:flex gap-6 items-center">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-sm">sensors</span>
+<p class="text-xs font-bold uppercase tracking-widest">Real-time Monitoring</p>
+</div>
+<h3 class="text-xl font-bold mb-3 text-white">Satellite Biomass Tracking</h3>
+<p class="text-slate-400 mb-4">Your registered land (ID: #8921-FM) is currently being monitored via Sentinel-2 imagery to verify vegetation density and biomass growth.</p>
+<button class="flex items-center gap-2 bg-primary/20 hover:bg-primary/30 text-primary px-4 py-2 rounded-lg font-bold text-sm transition-all">
+<span class="material-symbols-outlined">map</span>
+                                        View Satellite Map
+                                    </button>
+</div>
+<div class="mt-6 md:mt-0 w-full md:w-48 h-32 rounded-lg overflow-hidden border border-slate-700">
+<div class="w-full h-full bg-slate-800 flex items-center justify-center relative">
+<img class="w-full h-full object-cover opacity-60" data-alt="Satellite view of green farmland patterns" data-location="Iowa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeuxZe6SDdksZzcVb56cIJmbgEZVq8lMWPzrA1XFkWJqXMUKgnfy3CSGhMEoKwvO8miIQcu4yRXwvNCv5Ngf2uSTgPasuhBSyZmk8pNKOJyCEckkrBIfEB-lAzVF26iId5tUJ4Bn_Qn6aqVa2iAaSAgL-kOySB4RaOMTg7Fu9s2k-fEcJ9uvcUbuMjHdcj8CmbsZeffHAhT3b4FBUQAiOYAp-yEbxwLVq4qR7cdnqPRPOeyzPOiHs3PBrk5AZVwMw-I2QIjVfYHH8"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="h-4 w-4 bg-primary rounded-full animate-pulse shadow-[0_0_15px_rgba(19,236,37,1)]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Document Upload Section -->
+<div class="bg-white dark:bg-slate-800/30 rounded-xl p-8 border border-slate-200 dark:border-slate-800">
+<h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                                Required Documentation
+                            </h2>
+<div class="grid gap-6">
+<!-- Document Item 1 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div>
+<p class="font-bold">Land Deed &amp; Titles</p>
+<p class="text-sm text-slate-500">Legal proof of ownership (PDF/JPG)</p>
+</div>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-primary hover:text-background-dark font-bold text-sm rounded transition-all">
+<span class="material-symbols-outlined text-sm">upload</span>
+                                        Upload
+                                    </button>
+</div>
+<!-- Document Item 2 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+</div>
+<div>
+<p class="font-bold">Third-party Audit Report</p>
+<p class="text-sm text-slate-500">Soil health and carbon baseline report</p>
+</div>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-primary hover:text-background-dark font-bold text-sm rounded transition-all">
+<span class="material-symbols-outlined text-sm">upload</span>
+                                        Upload
+                                    </button>
+</div>
+<!-- Document Item 3 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div>
+<p class="font-bold">On-site Land Photography</p>
+<p class="text-sm text-slate-500">Geo-tagged photos of restoration areas</p>
+</div>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-primary hover:text-background-dark font-bold text-sm rounded transition-all">
+<span class="material-symbols-outlined text-sm">upload</span>
+                                        Upload
+                                    </button>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 flex justify-end">
+<button class="bg-primary text-background-dark font-bold px-8 py-3 rounded-lg hover:shadow-[0_0_20px_rgba(19,236,37,0.3)] transition-all flex items-center gap-2">
+                                    Submit for Review
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sidebar / FAQ -->
+<div class="space-y-6">
+<div class="bg-slate-100 dark:bg-slate-900/30 rounded-xl p-6 border border-slate-200 dark:border-slate-800">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">help_outline</span>
+                                Common Questions
+                            </h3>
+<div class="space-y-4">
+<div>
+<p class="font-bold text-sm mb-1">How long does review take?</p>
+<p class="text-sm text-slate-500 leading-relaxed">Internal review typically takes 5-7 business days once all documents are submitted.</p>
+</div>
+<hr class="border-slate-200 dark:border-slate-800"/>
+<div>
+<p class="font-bold text-sm mb-1">What is the audit process?</p>
+<p class="text-sm text-slate-500 leading-relaxed">A certified third-party auditor will visit your site or perform remote sensing to confirm carbon sequestration claims.</p>
+</div>
+<hr class="border-slate-200 dark:border-slate-800"/>
+<div>
+<p class="font-bold text-sm mb-1">How are credits issued?</p>
+<p class="text-sm text-slate-500 leading-relaxed">Once certified, credits are minted on the platform and listed for sale in the marketplace.</p>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-primary/20 to-transparent rounded-xl p-6 border border-primary/20">
+<h3 class="text-lg font-bold mb-2">Need Help?</h3>
+<p class="text-sm text-slate-500 mb-4">Our dedicated verification officers are here to help you through the process.</p>
+<button class="w-full py-2 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-background-dark transition-colors">
+                                Contact Support
+                            </button>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto border-t border-slate-200 dark:border-slate-800 py-6 px-6 lg:px-20">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+<p>© 2024 CarbonTrade Ecosystem. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Compliance Standards</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

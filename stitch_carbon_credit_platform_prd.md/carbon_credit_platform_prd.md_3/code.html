@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Unified User Registration | Carbon Credit Platform</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary: #15803d;
+            --primary-hover: #166534;
+            --secondary: #0ea5e9;
+            --bg-light: #f8fafc;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }.toggle-tab:checked + label {
+            @apply bg-white text-green-800 shadow-sm ring-1 ring-black/5;
+        }#farmer-fields { display: none; }
+        #industry-toggle:checked ~ #registration-form #industry-fields { display: block; }
+        #industry-toggle:checked ~ #registration-form #farmer-fields { display: none; }
+        #farmer-toggle:checked ~ #registration-form #industry-fields { display: none; }
+        #farmer-toggle:checked ~ #registration-form #farmer-fields { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col items-center justify-center p-6">
+<div class="absolute top-8 left-8">
+<a class="flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+            Back to Home
+        </a>
+</div>
+<div class="w-full max-w-[480px] bg-white rounded-2xl shadow-xl shadow-slate-200/60 p-8 md:p-10 border border-slate-100">
+<div class="text-center mb-8">
+<div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 text-green-700 rounded-xl mb-4">
+<span class="material-symbols-outlined text-3xl">eco</span>
+</div>
+<h1 class="text-2xl font-bold text-slate-900 tracking-tight">Create your account</h1>
+<p class="text-slate-500 mt-2 text-sm">Join the ecosystem for sustainable growth</p>
+</div>
+<div class="relative bg-slate-100 p-1 rounded-xl flex mb-8">
+<input checked="" class="toggle-tab hidden" id="industry-toggle" name="role" type="radio"/>
+<label class="flex-1 text-center py-2.5 text-sm font-semibold rounded-lg cursor-pointer transition-all text-slate-500" for="industry-toggle">
+                Industry
+            </label>
+<input class="toggle-tab hidden" id="farmer-toggle" name="role" type="radio"/>
+<label class="flex-1 text-center py-2.5 text-sm font-semibold rounded-lg cursor-pointer transition-all text-slate-500" for="farmer-toggle">
+                Farmer
+            </label>
+</div>
+<form class="space-y-5" id="registration-form">
+<div class="space-y-5" id="industry-fields">
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-1.5">Company Name</label>
+<input class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none" placeholder="e.g. Global Logistics Corp" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-1.5">Industry Type</label>
+<select class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none">
+<option value="">Select industry type</option>
+<option>Manufacturing</option>
+<option>Transportation</option>
+<option>Energy</option>
+<option>Construction</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-1.5">Company Registration ID</label>
+<input class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none" placeholder="Tax ID or Business Number" type="text"/>
+</div>
+</div>
+<div class="space-y-5" id="farmer-fields">
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-1.5">Full Name</label>
+<input class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none" placeholder="Your full name" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-1.5">Farm Size (Acres)</label>
+<input class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none" placeholder="50" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-1.5">Primary Crop</label>
+<input class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none" placeholder="e.g. Wheat" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-1.5">Land Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-xl">location_on</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none" placeholder="Region or GPS coordinates" type="text"/>
+</div>
+</div>
+</div>
+<div class="space-y-5">
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-1.5">Email Address</label>
+<input class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none" placeholder="name@example.com" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 mb-1.5">Password</label>
+<input class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none" placeholder="••••••••" type="password"/>
+<p class="text-[11px] text-slate-400 mt-1.5">Must be at least 8 characters with a mix of letters and symbols.</p>
+</div>
+</div>
+<button class="w-full bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white font-bold py-3.5 rounded-lg transition-all transform active:scale-[0.98] mt-4" type="button">
+                Create Account
+            </button>
+</form>
+<div class="relative my-8">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-slate-200"></div>
+</div>
+<div class="relative flex justify-center text-xs uppercase">
+<span class="bg-white px-3 text-slate-400 font-medium tracking-wider">Or register with</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 py-2.5 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
+<img alt="Google" class="w-4 h-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDQt6Fn53mbcHe5c6Pfo4x0xv-zzxOVAg8XQtOF7KlLjpCPWuZMaH-MFCY-bIL5IWRfWiLADQAatUMvo1M__SHDdsgVwJd-jfE6r8T0173zCxe8d22KLVIsLjT6S3Xk7KU3Hw5Fp7AxnBb89TtRl8ga8uE4h9jPj0KKd7u-OXmVxf1xidldt80ETbb0wOe-L4LAt6PZ-h95nxl9R7yvgJDuchf82d9oGCxhU9xohPcROd0IUCJFJ3Gdsqoub5i5RyMvZ6oD3IqqHU"/>
+<span class="text-sm font-semibold text-slate-700">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-2.5 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-lg text-[#1877F2]">group</span>
+<span class="text-sm font-semibold text-slate-700">Facebook</span>
+</button>
+</div>
+<p class="text-center text-slate-500 text-sm mt-8">
+            Already have an account? 
+            <a class="text-green-700 font-bold hover:underline" href="#">Sign in</a>
+</p>
+</div>
+<div class="mt-8 flex gap-8 opacity-40 grayscale pointer-events-none">
+<div class="flex items-center gap-1 text-sm font-medium">
+<span class="material-symbols-outlined text-base">verified_user</span>
+            Verified Credits
+        </div>
+<div class="flex items-center gap-1 text-sm font-medium">
+<span class="material-symbols-outlined text-base">lock</span>
+            Secure Data
+        </div>
+<div class="flex items-center gap-1 text-sm font-medium">
+<span class="material-symbols-outlined text-base">public</span>
+            Global Standard
+        </div>
+</div>
+
+</body></html>

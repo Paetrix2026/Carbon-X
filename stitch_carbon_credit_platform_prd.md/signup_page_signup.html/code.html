@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Up | EcoTrade Carbon Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 lg:px-20 py-4 bg-white dark:bg-slate-950">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">EcoTrade</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">How it Works</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-6 bg-primary text-slate-950 text-sm font-bold hover:opacity-90 transition-opacity">
+                    Login
+                </button>
+</div>
+</header>
+<!-- Main Content Section -->
+<main class="flex-1 flex items-center justify-center p-6 lg:p-12">
+<div class="max-w-[1100px] w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+<!-- Signup Form Side -->
+<div class="flex flex-col gap-8 bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">Create Account</h1>
+<p class="text-slate-500 dark:text-slate-400">Join the movement for a sustainable future.</p>
+</div>
+<!-- Role Toggle -->
+<div class="flex h-12 w-full items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm text-slate-500 dark:text-slate-400 has-[:checked]:text-slate-900 dark:has-[:checked]:text-white text-sm font-semibold transition-all">
+<span class="truncate">Register as Industry</span>
+<input checked="" class="invisible w-0" name="user-role" type="radio" value="industry"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm text-slate-500 dark:text-slate-400 has-[:checked]:text-slate-900 dark:has-[:checked]:text-white text-sm font-semibold transition-all">
+<span class="truncate">Register as Farmer</span>
+<input class="invisible w-0" name="user-role" type="radio" value="farmer"/>
+</label>
+</div>
+<!-- Input Fields -->
+<div class="flex flex-col gap-5">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col gap-2">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Full Name</span>
+<input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400" placeholder="John Doe" type="text"/>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Email Address</span>
+<input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400" placeholder="john@company.com" type="email"/>
+</label>
+</div>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Company / Farm Name</span>
+<input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400" placeholder="Enter name" type="text"/>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Password</span>
+<div class="relative">
+<input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</label>
+<div class="flex items-start gap-3 py-2">
+<input class="mt-1 rounded border-slate-300 text-primary focus:ring-primary" id="tos" type="checkbox"/>
+<label class="text-sm text-slate-600 dark:text-slate-400" for="tos">
+                                I agree to the <a class="text-primary font-medium hover:underline" href="#">Terms of Service</a> and <a class="text-primary font-medium hover:underline" href="#">Privacy Policy</a>.
+                            </label>
+</div>
+<button class="w-full bg-primary text-slate-950 font-bold py-4 rounded-lg hover:opacity-95 transition-all shadow-lg shadow-primary/20">
+                            Create Account
+                        </button>
+<p class="text-center text-sm text-slate-500 dark:text-slate-400">
+                            Already have an account? <a class="text-primary font-bold hover:underline" href="#">Login here</a>
+</p>
+</div>
+</div>
+<!-- Info Side -->
+<div class="hidden lg:flex flex-col gap-10 sticky top-12">
+<div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-background-dark/80 mix-blend-multiply"></div>
+<img alt="Green field landscape" class="w-full h-full object-cover" data-alt="Vibrant green rolling hills with modern wind turbines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvS0mo4GbLWXFCjStn_H5h2Wfj3PQ8sZ7ZjHkfofrmfYqqGkhrEVj7mVuxXrfrDuiVIMH6V_BV-brWnnE5CqObRAMcok3kH52ul0btYG4PAM5aBaaZyaJijY52P-7hRt8w-L9sPayHQ_yBQRRhEN_jCu_Lh7az2MXLHk6n7mici_0bDD1oBiDqhDowj7aZqw8OClvBQnNQ1GLWq8Iu_FthkbEnWsWq4foHsEhsnPXIbJZgLncggvKoaGaJrceuk48NCNIkTJ5zKmM"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<h3 class="text-white text-2xl font-bold mb-2">Sustainable Commerce</h3>
+<p class="text-white/90 text-sm">Empowering the world to trade carbon credits efficiently and transparently.</p>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Why Join EcoTrade?</h2>
+<div class="flex items-start gap-4">
+<div class="size-10 flex items-center justify-center rounded-lg bg-primary/20 text-primary shrink-0">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-200">Monetize Carbon</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Turn your sustainable farming practices into a recurring revenue stream by selling high-quality carbon offsets.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-10 flex items-center justify-center rounded-lg bg-primary/20 text-primary shrink-0">
+<span class="material-symbols-outlined">public</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-200">Global Marketplace Access</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Connect directly with Fortune 500 companies and industries looking to offset their emissions through verified projects.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-10 flex items-center justify-center rounded-lg bg-primary/20 text-primary shrink-0">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-200">Verified &amp; Secure</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Our blockchain-backed verification system ensures every credit is unique, traceable, and fully compliant with international standards.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 border border-primary/20 p-6 rounded-xl">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary">eco</span>
+<span class="font-bold text-slate-800 dark:text-slate-200">Environmental Impact</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">
+                            Over <span class="font-bold text-slate-900 dark:text-white">1.2M Tons</span> of CO2 offset by our community this year alone.
+                        </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Footer -->
+<footer class="px-6 lg:px-20 py-8 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-slate-500 dark:text-slate-400 text-sm">
+                    © 2024 EcoTrade Carbon Solutions. All rights reserved.
+                </div>
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">language</span>
+</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">forum</span>
+</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">help_center</span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

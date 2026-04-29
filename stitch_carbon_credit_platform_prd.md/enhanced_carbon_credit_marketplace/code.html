@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#95d3ba",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#111c2d",
+                        "tertiary-fixed": "#d5e6df",
+                        "outline-variant": "#bfc9c3",
+                        "on-primary-container": "#80bea6",
+                        "on-secondary-fixed": "#002113",
+                        "on-tertiary-container": "#a4b5ae",
+                        "surface-container": "#e7eeff",
+                        "tertiary": "#22312c",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-surface": "#263143",
+                        "primary": "#003527",
+                        "tertiary-fixed-dim": "#bacac3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#2b6954",
+                        "primary-container": "#064e3b",
+                        "error": "#ba1a1a",
+                        "on-surface": "#111c2d",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#cfdaf2",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-low": "#f0f3ff",
+                        "surface-container-high": "#dee8ff",
+                        "background": "#f9f9ff",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "on-surface-variant": "#404944",
+                        "secondary": "#006c49",
+                        "surface-variant": "#d8e3fb",
+                        "on-primary-fixed": "#002117",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#b0f0d6",
+                        "secondary-fixed": "#6ffbbe",
+                        "tertiary-container": "#384742",
+                        "inverse-on-surface": "#ecf1ff",
+                        "secondary-container": "#6cf8bb",
+                        "surface": "#f9f9ff",
+                        "surface-container-highest": "#d8e3fb",
+                        "surface-bright": "#f9f9ff",
+                        "outline": "#707974",
+                        "on-tertiary-fixed-variant": "#3b4a44",
+                        "primary-fixed-dim": "#95d3ba",
+                        "on-tertiary-fixed": "#101e1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            background: rgba(249, 249, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #bfc9c3;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- TopNavBar (Shared Component Execution) -->
+<header class="sticky top-0 z-50 bg-surface dark:bg-slate-950 border-b-0">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-emerald-950 dark:text-emerald-50 tracking-tight font-headline">Verdant Ledger</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-emerald-800 dark:hover:text-emerald-200 transition-colors" href="#">Dashboard</a>
+<a class="text-emerald-700 dark:text-emerald-400 font-semibold border-b-2 border-emerald-700 dark:border-emerald-400 pb-1" href="#">Marketplace</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-emerald-800 dark:hover:text-emerald-200 transition-colors" href="#">Calculators</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-emerald-800 dark:hover:text-emerald-200 transition-colors" href="#">Impact Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-outline material-symbols-outlined">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/10 text-sm w-64" placeholder="Search projects..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-emerald-50/50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-emerald-50/50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</button>
+<button class="ml-2 bg-primary text-on-primary px-6 py-2.5 rounded-xl font-semibold text-sm shadow-sm hover:opacity-90 active:scale-95 transition-all">
+                        Buy Credits
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-screen-2xl mx-auto px-8 py-10">
+<!-- Marketplace Hero/Header -->
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="text-5xl font-bold font-headline text-primary tracking-tight mb-4">Carbon Credit Marketplace</h1>
+<p class="text-on-surface-variant max-w-xl text-lg">Invest in verified, high-impact environmental projects across the Indian subcontinent. Institutional-grade offsets with full provenance transparency.</p>
+</div>
+<div class="flex gap-3">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col items-end border border-outline-variant/10">
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Avg. Price (tCO2e)</span>
+<span class="text-2xl font-bold font-headline text-secondary">$14.20</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col items-end border border-outline-variant/10">
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Market Volume (24h)</span>
+<span class="text-2xl font-bold font-headline text-secondary">2.4M</span>
+</div>
+</div>
+</div>
+<!-- Advanced Filter UX -->
+<section class="mb-8 flex flex-wrap items-center gap-4">
+<div class="flex items-center gap-2 bg-surface-container-lowest px-4 py-2.5 rounded-full border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-sm">filter_list</span>
+<span class="text-sm font-semibold text-on-surface">Filter By:</span>
+<div class="h-4 w-[1px] bg-outline-variant/30 mx-2"></div>
+<button class="text-sm text-on-surface-variant hover:text-primary px-2">Project Type</button>
+<button class="text-sm text-on-surface-variant hover:text-primary px-2">Registry</button>
+<button class="text-sm text-on-surface-variant hover:text-primary px-2">Price Range</button>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<div class="flex items-center gap-1.5 bg-secondary-fixed text-on-secondary-fixed px-3 py-1.5 rounded-full text-xs font-semibold">
+                    Region: India <span class="material-symbols-outlined text-xs cursor-pointer">close</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-high text-on-surface-variant px-3 py-1.5 rounded-full text-xs font-semibold">
+                    Type: All <span class="material-symbols-outlined text-xs cursor-pointer">expand_more</span>
+</div>
+<button class="text-xs font-bold text-secondary-fixed-variant hover:underline ml-2">Clear All</button>
+</div>
+</section>
+<!-- Bento Grid for Projects -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Project 1: Rajasthan Solar -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col border border-transparent hover:border-outline-variant/30 transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img alt="Rajasthan Solar Park" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="wide shot of vast solar panel array in the golden desert sands of Jodhpur Rajasthan under a clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD75D5iPhLuXh3ep9N5NIhCxck9XezXBuzTO9CM8bvxwjKP6ULXbFcRznEZjqcxLo9-wMuJ_tI4xPXUXEL-VRKX77FM8AjoSbEZ2TsffX1ZB_DouAtS8ttqEFqeBEU4ygmTIUd5P0bIr7tc-EkwO-9GZ4AXJFLev3AQyGEiS-Z9U2geQtT9A4CvCNcBBtBrUBwBnLMMvfBYguBio1rfiCpi3XMAk0ftda9oACgRdKvGFkC-lsam1V41TWOUsLkcgkxsflTm_JmK7eY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded tracking-tight uppercase">Gold Standard</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="text-secondary-fixed text-xs font-bold px-2 py-0.5 rounded-full bg-primary/40 backdrop-blur-sm border border-secondary-fixed/30">Renewable Energy</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="font-headline font-bold text-lg text-primary mb-1 leading-tight">Rajasthan Solar Park Initiative</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Jodhpur, Rajasthan
+                    </p>
+<div class="mt-auto pt-4 flex flex-col gap-3">
+<div class="flex justify-between items-end border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Available Credits</p>
+<p class="font-bold text-lg text-on-surface">142,500 <span class="text-xs font-normal text-on-surface-variant">tCO2e</span></p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Price per Ton</p>
+<p class="font-bold text-lg text-secondary">$12.50</p>
+</div>
+</div>
+<button class="w-full bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-bold py-3 rounded-xl transition-all duration-200">
+                            View Details
+                        </button>
+</div>
+</div>
+</article>
+<!-- Project 2: Maharashtra Soil -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col border border-transparent hover:border-outline-variant/30 transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img alt="Maharashtra Soil Health" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of healthy dark soil in a lush agricultural field in Maharashtra Vidarbha at sunrise with dew on plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdOdLmNSYVydj8gEbiU8vezHDVfY2cV3KJ7L46nwdFeMOJTOK5Kcstica49iSULWUedsh7VXeW3K317vZfjJEWQ9UhSQy_16JMWffIiViHKYvLDivXl9fcRdsWH7UFAGDysISYS6t8XLYwZFC4B8bk5Zb69QPumB9rnQjo651WboIpPYk-k-WEVxBxz2YDKJwnMqMeFyw9bXw9zIAn_q_r2KH25YsJ8gsH1ecuQ9qtDJfBYPSG8IjeE2zPtvqIMt4F4RpgRJvuvLI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded tracking-tight uppercase">Verra Verified</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="text-secondary-fixed text-xs font-bold px-2 py-0.5 rounded-full bg-primary/40 backdrop-blur-sm border border-secondary-fixed/30">Regenerative Agriculture</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="font-headline font-bold text-lg text-primary mb-1 leading-tight">Maharashtra Soil Health Project</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Vidarbha, Maharashtra
+                    </p>
+<div class="mt-auto pt-4 flex flex-col gap-3">
+<div class="flex justify-between items-end border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Available Credits</p>
+<p class="font-bold text-lg text-on-surface">88,200 <span class="text-xs font-normal text-on-surface-variant">tCO2e</span></p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Price per Ton</p>
+<p class="font-bold text-lg text-secondary">$18.90</p>
+</div>
+</div>
+<button class="w-full bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-bold py-3 rounded-xl transition-all duration-200">
+                            View Details
+                        </button>
+</div>
+</div>
+</article>
+<!-- Project 3: Western Ghats -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col border border-transparent hover:border-outline-variant/30 transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img alt="Western Ghats Agroforestry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="misty mountains of the Western Ghats with tiered agroforestry plantations and lush tropical canopy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGGb-jr87hl0E23Bjth5MzZwhQsXpp6ZbW5VtMgLaKiejDZXDSRZLP6deXMhszxTpoRNV34Wx_27ynAwfl70k7lm12GDnoeETNrzwk6Sg2A-8PogXSuj9JasTvG_I2dNP8Lk9z-2sBxM3ZvWizyYWIdVqMHqR-QAKLTI0pp1NBlIjMv05g8YGdx2SwZYnM-vieONSD4pbklr7iczP76vBddn5rCXQSJfqo421dk2UhmbDGPKvayJ94JnaO03nBFHr1qeO8cAcGpPA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded tracking-tight uppercase">Plan Vivo</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="text-secondary-fixed text-xs font-bold px-2 py-0.5 rounded-full bg-primary/40 backdrop-blur-sm border border-secondary-fixed/30">Agroforestry</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="font-headline font-bold text-lg text-primary mb-1 leading-tight">Western Ghats Agroforestry</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Kodagu, Karnataka
+                    </p>
+<div class="mt-auto pt-4 flex flex-col gap-3">
+<div class="flex justify-between items-end border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Available Credits</p>
+<p class="font-bold text-lg text-on-surface">31,000 <span class="text-xs font-normal text-on-surface-variant">tCO2e</span></p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Price per Ton</p>
+<p class="font-bold text-lg text-secondary">$24.00</p>
+</div>
+</div>
+<button class="w-full bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-bold py-3 rounded-xl transition-all duration-200">
+                            View Details
+                        </button>
+</div>
+</div>
+</article>
+<!-- Project 4: Punjab Biomass -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col border border-transparent hover:border-outline-variant/30 transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img alt="Punjab Biomass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="sustainable industrial biomass facility in Punjab with green fields in the foreground under a hazy blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsRYWYgKTGF_juG6T4Z5SxcMFD6vm0NQfRjx0E-s-majjOfKksWCh3LfB9q7-Q2kaOhBg_2z9EGY5N_iGE-1h8QFuNL85gjLJx8inVdHPQIGslwttKsFrZUlP8uL7mEh0f7dTqoNLtgYed4Y79hPxmNw669mPNWFMpDnEs3giUOVTbkWMsbpmurhIUcFxLsCC6KEB3ta-5_ubjUAqlLAYso7-Ii6vrFyAB1nZn2fSDLZhWfhG2O1nzOEVTyVz62PLK5tKoj5iUW9o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded tracking-tight uppercase">CDM Verified</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="text-secondary-fixed text-xs font-bold px-2 py-0.5 rounded-full bg-primary/40 backdrop-blur-sm border border-secondary-fixed/30">Biomass Energy</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="font-headline font-bold text-lg text-primary mb-1 leading-tight">Punjab Biomass Energy Project</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Ludhiana, Punjab
+                    </p>
+<div class="mt-auto pt-4 flex flex-col gap-3">
+<div class="flex justify-between items-end border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Available Credits</p>
+<p class="font-bold text-lg text-on-surface">215,000 <span class="text-xs font-normal text-on-surface-variant">tCO2e</span></p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Price per Ton</p>
+<p class="font-bold text-lg text-secondary">$11.20</p>
+</div>
+</div>
+<button class="w-full bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-bold py-3 rounded-xl transition-all duration-200">
+                            View Details
+                        </button>
+</div>
+</div>
+</article>
+<!-- Project 5: Himalayan Forest -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col border border-transparent hover:border-outline-variant/30 transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img alt="Himalayan Forest" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Snow capped Himalayan peaks overlooking a dense ancient pine forest in Uttarakhand at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvJN-gR3PWsMt0rUbuD_KC54w2YcmELXt3I5Rv4PEBo_w21A3ASWWkOyiUPmsO07r0rPh5hm6GrYGIgXtXiw2CSxsV8NpBo1oRngKRySCU9tyUThnZusBTOXde4ThMDnATF_DdwQbBskjBGlfB_CRo1zXL7Vx3Ai9EXO9BOIj6NR5Mu16WlLWRYyEuZsQaEkJ8nUsp8IgSi42QblNJrxNyjPWEvvVgDxLXW-vCMwYJo_8U0tbCQsOD_azNhwffe_nnBEyeMpWSIgI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded tracking-tight uppercase">Gold Standard</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="text-secondary-fixed text-xs font-bold px-2 py-0.5 rounded-full bg-primary/40 backdrop-blur-sm border border-secondary-fixed/30">Afforestation</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="font-headline font-bold text-lg text-primary mb-1 leading-tight">Himalayan Forest Preservation</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Uttarakhand
+                    </p>
+<div class="mt-auto pt-4 flex flex-col gap-3">
+<div class="flex justify-between items-end border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Available Credits</p>
+<p class="font-bold text-lg text-on-surface">54,300 <span class="text-xs font-normal text-on-surface-variant">tCO2e</span></p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Price per Ton</p>
+<p class="font-bold text-lg text-secondary">$32.00</p>
+</div>
+</div>
+<button class="w-full bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-bold py-3 rounded-xl transition-all duration-200">
+                            View Details
+                        </button>
+</div>
+</div>
+</article>
+<!-- Project 6: Tamil Nadu Wind -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col border border-transparent hover:border-outline-variant/30 transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img alt="Tamil Nadu Wind Farm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="majestic wind turbines stretching across the green landscape of Muppandal Tamil Nadu during a windy cloudy afternoon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBabeNlMbL0Owy6n3RHGZHKQd5AF-AlBR6fXe-pZJofWIO5IQC7IxDcpBMZPNJzErkf_XIM5lILokjS9hwDORuZq7U-OvJUKRwkc9qlrS0OCLEdgPau5skpmjZowMECTFabSaNkLBBf8dnMhv3Auoq8_JjdSxNh1dCb_GBIkDO3meQseMXf7CstTCshyMQQflCpDkf8w_vX1OHevaW3LYOOjjUnnOGNahqZX4GLbl9W2wj1467kGRLjR4X5l5Gc5hbzFM4PEIrf1x0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded tracking-tight uppercase">Verra Verified</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="text-secondary-fixed text-xs font-bold px-2 py-0.5 rounded-full bg-primary/40 backdrop-blur-sm border border-secondary-fixed/30">Wind Energy</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="font-headline font-bold text-lg text-primary mb-1 leading-tight">Tamil Nadu Wind Farm Expansion</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Muppandal, Tamil Nadu
+                    </p>
+<div class="mt-auto pt-4 flex flex-col gap-3">
+<div class="flex justify-between items-end border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Available Credits</p>
+<p class="font-bold text-lg text-on-surface">192,000 <span class="text-xs font-normal text-on-surface-variant">tCO2e</span></p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Price per Ton</p>
+<p class="font-bold text-lg text-secondary">$14.50</p>
+</div>
+</div>
+<button class="w-full bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-bold py-3 rounded-xl transition-all duration-200">
+                            View Details
+                        </button>
+</div>
+</div>
+</article>
+<!-- Project 7: Gujarat Grazing -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col border border-transparent hover:border-outline-variant/30 transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img alt="Gujarat Sustainable Grazing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cattle grazing in a sustainable manner across the dry salt plains and grasslands of Kutch Gujarat at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm8lb3ATrdXxaqxTrCh4Ojhi7JywETHG_48GOit9os2EH6xHGcdv_UpUt7ky8lBjsXAoCTIoVbQRLJkZFHuyp2CRYsFdd8dR6x7nIFklEou0_WM7B4gQZO5UCpVmYaRECJohk1q0wjeLXcVbqbyoPhvOalzrUBUVtIFgg4wWURDi1hp_ic86yAEyP0oP9vZkMyZwrY-11VYY9JSH7Hid3tQZmQCYrjim4igSn6LFNkkBdka5johsMfHrY671yoKCn8mr3zcXImnls"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded tracking-tight uppercase">Plan Vivo</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="text-secondary-fixed text-xs font-bold px-2 py-0.5 rounded-full bg-primary/40 backdrop-blur-sm border border-secondary-fixed/30">Ecosystem Services</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="font-headline font-bold text-lg text-primary mb-1 leading-tight">Gujarat Sustainable Grazing</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Kutch, Gujarat
+                    </p>
+<div class="mt-auto pt-4 flex flex-col gap-3">
+<div class="flex justify-between items-end border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Available Credits</p>
+<p class="font-bold text-lg text-on-surface">65,000 <span class="text-xs font-normal text-on-surface-variant">tCO2e</span></p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-label mb-1">Price per Ton</p>
+<p class="font-bold text-lg text-secondary">$16.75</p>
+</div>
+</div>
+<button class="w-full bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-bold py-3 rounded-xl transition-all duration-200">
+                            View Details
+                        </button>
+</div>
+</div>
+</article>
+<!-- CTA Card / Placeholder for more -->
+<article class="bg-primary-container rounded-xl p-8 flex flex-col justify-center items-center text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[120px] absolute -right-8 -bottom-8">eco</span>
+</div>
+<h3 class="text-2xl font-bold font-headline text-secondary-fixed mb-4">Can't find what you're looking for?</h3>
+<p class="text-on-primary-container/80 text-sm mb-6">Our procurement desk can help you source large-scale specific project types or vintages for your institutional needs.</p>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform">
+                    Contact Procurement
+                </button>
+</article>
+</div>
+</main>
+<!-- Footer (Shared Component Execution) -->
+<footer class="bg-emerald-950 dark:bg-black mt-20">
+<div class="w-full py-12 px-8 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-screen-2xl mx-auto">
+<div>
+<span class="text-lg font-bold text-white uppercase tracking-wider mb-4 block">Verdant Ledger</span>
+<p class="text-emerald-200/70 text-sm max-w-xs mb-6">Providing institutional-grade infrastructure for the global carbon economy. Transparency, integrity, and impact.</p>
+<div class="flex gap-4">
+<a class="text-emerald-200/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-emerald-200/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-emerald-200/70 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-3">
+<span class="text-white font-semibold text-sm mb-1">Company</span>
+<a class="text-emerald-200/70 hover:text-white text-sm transition-colors" href="#">For Businesses</a>
+<a class="text-emerald-200/70 hover:text-white text-sm transition-colors" href="#">API Access</a>
+<a class="text-emerald-200/70 hover:text-white text-sm transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-white font-semibold text-sm mb-1">Resources</span>
+<a class="text-emerald-200/70 hover:text-white text-sm transition-colors" href="#">Carbon Calculators</a>
+<a class="text-emerald-200/70 hover:text-white text-sm transition-colors" href="#">Terms of Service</a>
+<a class="text-emerald-200/70 hover:text-white text-sm transition-colors" href="#">Help Center</a>
+</div>
+</div>
+<div class="flex flex-col justify-between">
+<div class="bg-white/5 p-6 rounded-xl border border-white/10">
+<span class="text-white text-sm font-semibold mb-2 block">Market Status</span>
+<div class="flex items-center gap-2 mb-4">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed shadow-[0_0_8px_#6ffbbe]"></span>
+<span class="text-xs text-emerald-200/70">Registry Synchronized</span>
+</div>
+<button class="w-full bg-emerald-800 text-white py-2 rounded-lg text-xs font-bold hover:bg-emerald-700 transition-colors">Subscribe to Updates</button>
+</div>
+<p class="text-emerald-200/50 text-[10px] mt-6">© 2024 Verdant Ledger. Institutional Carbon Infrastructure.</p>
+</div>
+</div>
+</footer>
+</body></html>

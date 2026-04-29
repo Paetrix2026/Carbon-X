@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carbon Credit Project Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec25",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102212",
+                        "neutral-dark": "#1a2e1c",
+                        "neutral-border": "#2d4230",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-neutral-border bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">eco</span>
+<h1 class="text-xl font-bold tracking-tight">CarbonTrade</h1>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Portfolio</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Insights</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-64 rounded-lg bg-neutral-dark border-none py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary" placeholder="Search projects..."/>
+</div>
+<button class="flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-sm font-bold text-background-dark hover:brightness-110 transition-all">
+                Connect Wallet
+            </button>
+<div class="h-10 w-10 rounded-full bg-neutral-dark border border-neutral-border flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-slate-400">person</span>
+</div>
+</div>
+</header>
+<main class="mx-auto flex w-full max-w-[1280px] flex-1 flex-col gap-6 p-6 md:px-20">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm text-slate-500">
+<a class="hover:text-primary" href="#">Marketplace</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary" href="#">Reforestation</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-200">Amazon Basin Project</span>
+</nav>
+<!-- Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 flex flex-col gap-6">
+<div class="group relative h-[400px] w-full overflow-hidden rounded-xl border border-neutral-border bg-neutral-dark">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Lush green rainforest canopy from aerial view" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAL_SeXrhb_LE4JFTcYbZ6RmN0wTU9-vvhBv_Zoao8dqkmd1cb2KmvHNAqW-SdCHMqZZUBnomxRJxYiretgudQJyW6FZTSs35k91iQh2lI6HYxSpRo3FVD6CfmZKjDN9PZbGQxhv6TgBlFR97MJAWczahldGX82C-LXRUgfv2QVrd1nZq0pPrFFXDQXKjQiR9Y3XN9CDZlnNMbpPskXoqCu5Ogm0pPkPPVI-wsUG0Di6thpyG5GreraBNZfCzFZxhp0TToIxkL7EUA');"></div>
+<div class="absolute bottom-4 right-4 flex gap-2">
+<button class="flex items-center gap-2 rounded-lg bg-black/50 px-4 py-2 text-xs font-medium text-white backdrop-blur-md hover:bg-black/70">
+<span class="material-symbols-outlined text-sm">satellite_alt</span> Satellite View
+                        </button>
+<button class="flex items-center gap-2 rounded-lg bg-black/50 px-4 py-2 text-xs font-medium text-white backdrop-blur-md hover:bg-black/70">
+<span class="material-symbols-outlined text-sm">photo_library</span> Gallery
+                        </button>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div>
+<h2 class="text-3xl font-bold tracking-tight md:text-4xl">Amazon Basin Reforestation Project</h2>
+<p class="mt-2 text-slate-400">Restoring biodiversity and sequestering carbon through native agroforestry in the Pará region.</p>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-border bg-neutral-dark hover:bg-primary/10 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+<!-- Key Stats Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+<div class="flex flex-col gap-2 rounded-xl border border-neutral-border bg-neutral-dark p-4">
+<span class="material-symbols-outlined text-primary">potted_plant</span>
+<span class="text-xs text-slate-400 uppercase tracking-wider font-bold">Project Type</span>
+<span class="text-lg font-semibold">Soil Carbon</span>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-neutral-border bg-neutral-dark p-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="text-xs text-slate-400 uppercase tracking-wider font-bold">Location</span>
+<span class="text-lg font-semibold">Brazil</span>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-neutral-border bg-neutral-dark p-4">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="text-xs text-slate-400 uppercase tracking-wider font-bold">Verification Body</span>
+<span class="text-lg font-semibold">Verra (VCS)</span>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-neutral-border bg-neutral-dark p-4">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+<span class="text-xs text-slate-400 uppercase tracking-wider font-bold">Total Credits</span>
+<span class="text-lg font-semibold">1.25M tCO2e</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Panel: Price Tracker & Buy -->
+<aside class="flex flex-col gap-6">
+<div class="rounded-xl border border-neutral-border bg-neutral-dark p-6 sticky top-24">
+<div class="mb-6 flex items-center justify-between">
+<div>
+<p class="text-sm text-slate-400">Current Price</p>
+<h3 class="text-3xl font-black text-primary">$18.42 <span class="text-sm font-medium text-slate-500">/ credit</span></h3>
+</div>
+<div class="flex flex-col items-end">
+<span class="flex items-center gap-1 text-sm font-bold text-primary">
+<span class="material-symbols-outlined text-sm">trending_up</span> +4.2%
+                            </span>
+<span class="text-[10px] text-slate-500">Last 24h</span>
+</div>
+</div>
+<!-- Mini Chart Placeholder -->
+<div class="mb-6 h-24 w-full rounded-lg bg-background-dark/50 flex items-end justify-between p-2 gap-1">
+<div class="h-[40%] w-full bg-primary/20 rounded-t"></div>
+<div class="h-[55%] w-full bg-primary/20 rounded-t"></div>
+<div class="h-[45%] w-full bg-primary/20 rounded-t"></div>
+<div class="h-[70%] w-full bg-primary/20 rounded-t"></div>
+<div class="h-[65%] w-full bg-primary/20 rounded-t"></div>
+<div class="h-[85%] w-full bg-primary/30 rounded-t border-t border-primary"></div>
+<div class="h-[95%] w-full bg-primary/40 rounded-t border-t-2 border-primary"></div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-400">Available Credits</span>
+<span class="font-bold">42,850 tCO2e</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-400">Vintage</span>
+<span class="font-bold">2023-2024</span>
+</div>
+<hr class="border-neutral-border"/>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase text-slate-500">Amount to Buy</label>
+<div class="flex items-center gap-2 rounded-lg bg-background-dark px-4 py-2 border border-neutral-border">
+<input class="w-full border-none bg-transparent p-0 text-lg font-bold focus:ring-0" placeholder="0.00" type="number" value="100"/>
+<span class="text-sm font-bold text-slate-400">Credits</span>
+</div>
+</div>
+<button class="w-full rounded-lg bg-primary py-4 text-center font-black text-background-dark hover:brightness-110 transition-all">
+                            Buy Credits Now
+                        </button>
+<p class="text-center text-[10px] text-slate-500">Transactions are secured by blockchain and verified by third-party auditors.</p>
+</div>
+</div>
+</aside>
+</section>
+<!-- Detailed Impact Section -->
+<section class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Impact Timeline -->
+<div class="rounded-xl border border-neutral-border bg-neutral-dark p-6">
+<h3 class="mb-6 flex items-center gap-2 text-xl font-bold">
+<span class="material-symbols-outlined text-primary">timeline</span> Environmental Impact Timeline
+                </h3>
+<div class="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:h-full before:w-[2px] before:bg-neutral-border">
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 h-6 w-6 rounded-full border-4 border-background-dark bg-primary"></div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-primary">Q1 2024</span>
+<h4 class="font-bold">250,000 Trees Planted</h4>
+<p class="text-sm text-slate-400">Successfully reached the second milestone of native species reforestation in targeted corridors.</p>
+</div>
+</div>
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 h-6 w-6 rounded-full border-4 border-background-dark bg-slate-600"></div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-500">Q4 2023</span>
+<h4 class="font-bold">VCS Verification Finalized</h4>
+<p class="text-sm text-slate-400">Project received its third annual verification from Verra, confirming sequestration rates.</p>
+</div>
+</div>
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 h-6 w-6 rounded-full border-4 border-background-dark bg-slate-600"></div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-500">Q2 2023</span>
+<h4 class="font-bold">Soil Carbon Baseline Study</h4>
+<p class="text-sm text-slate-400">Established comprehensive baseline metrics for underground carbon storage capacity.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Map Placeholder -->
+<div class="flex flex-col gap-4">
+<h3 class="flex items-center gap-2 text-xl font-bold">
+<span class="material-symbols-outlined text-primary">map</span> Project Boundaries
+                </h3>
+<div class="relative h-full min-h-[300px] w-full overflow-hidden rounded-xl border border-neutral-border bg-neutral-dark group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-[20s] linear group-hover:scale-110" data-alt="Satellite map view of a green area with highlighted boundaries" data-location="Brazil Amazon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBYpmDDK18LE8hj9Rur2icEpHkAOafAoWy9cDnz4U2iZkkc1ozXXtu-C-ZbFY7Mc3ZXx9_6S_70D6nYdH9DElrtKxZYrrgWO4bmKgc_Z6mHssfv-mN_zgokMqJ_EdEIHlXTb86X0aGwbUl5SHk8kXl9ullwZDlOEnyaCxrmFEKksgtMi_0Ar58DmymFW8qbsNpxzwbvzrV3wM-tFb69pYZxvYB6z5IfoHMYOvGGxD0pMVhlyzxXofcg3ziHvUPB98dAMJwJh6Bu_Q');"></div>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+<!-- UI Overlays for "Map" -->
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<div class="rounded-lg bg-black/60 p-2 backdrop-blur-sm">
+<div class="flex items-center gap-2 text-xs font-bold text-white">
+<span class="h-3 w-3 rounded-full bg-primary"></span>
+                                Protected Zone: 12,400 Ha
+                            </div>
+</div>
+</div>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/60 px-6 py-2 text-xs font-bold text-white backdrop-blur-sm border border-white/10">
+                        -3.4653, -62.2159
+                    </div>
+<div class="absolute right-4 bottom-4 flex flex-col gap-2">
+<button class="flex h-8 w-8 items-center justify-center rounded bg-black/60 text-white backdrop-blur-sm hover:bg-black/80">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex h-8 w-8 items-center justify-center rounded bg-black/60 text-white backdrop-blur-sm hover:bg-black/80">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-12 border-t border-neutral-border py-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-2xl">eco</span>
+<span class="font-bold tracking-tight">CarbonTrade</span>
+</div>
+<p class="text-sm text-slate-500">Empowering a sustainable future through transparent and verified carbon markets.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-sm font-bold uppercase tracking-widest">Platform</h5>
+<nav class="flex flex-col gap-2 text-sm text-slate-400">
+<a class="hover:text-primary" href="#">Marketplace</a>
+<a class="hover:text-primary" href="#">Registry</a>
+<a class="hover:text-primary" href="#">Fee Schedule</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-sm font-bold uppercase tracking-widest">Developers</h5>
+<nav class="flex flex-col gap-2 text-sm text-slate-400">
+<a class="hover:text-primary" href="#">API Docs</a>
+<a class="hover:text-primary" href="#">Smart Contracts</a>
+<a class="hover:text-primary" href="#">Whitepaper</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-sm font-bold uppercase tracking-widest">Support</h5>
+<nav class="flex flex-col gap-2 text-sm text-slate-400">
+<a class="hover:text-primary" href="#">Help Center</a>
+<a class="hover:text-primary" href="#">Contact Us</a>
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+</nav>
+</div>
+</div>
+<div class="mt-10 flex flex-col md:flex-row items-center justify-between border-t border-neutral-border pt-6 text-[10px] text-slate-500 uppercase tracking-widest">
+<span>© 2024 CarbonTrade. All rights reserved.</span>
+<div class="mt-4 flex gap-6 md:mt-0">
+<a class="hover:text-primary" href="#">Twitter</a>
+<a class="hover:text-primary" href="#">LinkedIn</a>
+<a class="hover:text-primary" href="#">Telegram</a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

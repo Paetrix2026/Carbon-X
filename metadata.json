@@ -1,0 +1,7 @@
+{
+  "name": "CarbonX",
+  "description": "An institutional naturalist framework for carbon credit exchange, connecting small farmers with global industries.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
