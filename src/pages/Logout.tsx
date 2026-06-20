@@ -10,6 +10,7 @@ export default function Logout() {
     const doLogout = async () => {
       // Small delay for UX so it feels like a real process
       await new Promise(resolve => setTimeout(resolve, 800));
+      localStorage.removeItem("activeRole");
       await supabase.auth.signOut();
       navigate("/login");
     };

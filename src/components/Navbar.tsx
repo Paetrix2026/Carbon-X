@@ -15,7 +15,12 @@ export default function Navbar() {
         .eq("id", userId)
         .single();
       if (profile) {
-        setUserRole(profile.role);
+        if (profile.role === "admin") {
+          const activeRole = localStorage.getItem("activeRole");
+          setUserRole(activeRole || "admin");
+        } else {
+          setUserRole(profile.role);
+        }
       } else {
         setUserRole(null);
       }
@@ -102,7 +107,7 @@ export default function Navbar() {
               </>
             ) : (
               <Link
-                to="/"
+                to="/login"
                 className="btn-primary !py-2.5 !px-6 text-sm"
               >
                 Get Started
